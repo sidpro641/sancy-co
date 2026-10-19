@@ -193,7 +193,12 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(ellipse at center, rgba(217,190,130,0.10) 0%, transparent 62%);
   pointer-events: none;
 }
-.hero__inner { position: relative; }
+/* CSS-only entrance: the first screen never waits on JavaScript */
+.hero__inner { position: relative; animation: heroIn 1.1s var(--ease) both; }
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(26px); }
+  to   { opacity: 1; transform: none; }
+}
 .hero__title {
   font-family: var(--serif);
   font-weight: 300;
