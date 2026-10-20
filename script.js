@@ -2,6 +2,10 @@
 (function () {
   "use strict";
 
+  /* Clé d'accès Web3Forms, partagée par tous les formulaires du site.
+     Créez-la gratuitement sur https://web3forms.com et collez-la ici. */
+  var WEB3FORMS_ACCESS_KEY = "VOTRE_CLE_WEB3FORMS";
+
   /* Navbar background on scroll */
   var nav = document.getElementById("nav");
   function onScroll() {
@@ -74,11 +78,18 @@
     counters.forEach(function (c) { co.observe(c); });
   }
 
-  /* Contact form — envoi via Web3Forms (sans backend) */
-  var form = document.getElementById("contactForm");
-  if (form) {
-    var note = document.getElementById("formNote");
-    var submitBtn = document.getElementById("formSubmit");
+  /* "Choisir ce pack" : pré-remplit le service dans le formulaire de contact */
+  var contactService = document.getElementById("c-service");
+  document.querySelectorAll("[data-pack]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (contactService) contactService.value = link.getAttribute("data-pack");
+    });
+  });
+
+  /* Formulaires — envoi via Web3Forms (sans backend) */
+  document.querySelectorAll("form.js-lead").forEach(function (form) {
+    var note = form.querySelector(".form__note");
+    var submitBtn = form.querySelector('[type="submit"]');
     var btnLabel = submitBtn.querySelector(".btn__label");
     var defaultLabel = btnLabel ? btnLabel.textContent : "Envoyer";
     var noteTimer = null;
@@ -104,10 +115,13 @@
       setNote("", null);
       setLoading(true);
 
+      var data = new FormData(form);
+      data.append("access_key", WEB3FORMS_ACCESS_KEY);
+
       fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Accept": "application/json" },
-        body: new FormData(form)
+        body: data
       })
         .then(function (res) {
           return res.json().then(function (json) {
@@ -130,7 +144,7 @@
           setLoading(false);
         });
     });
-  }
+  });
 
   /* Year */
   var y = document.getElementById("year");

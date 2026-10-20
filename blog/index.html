@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Sancy &amp; Co</title>
+  <meta name="description" content="Conseils de Sancy & Co pour développer votre entreprise en ligne : sites web, e-commerce, publicité Facebook et Instagram, référencement." />
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="../index.html" class="nav__brand" aria-label="Sancy & Co — accueil">
+        <img src="../assets/logo.jpg" alt="Sancy & Co" />
+      </a>
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#tarifs">Tarifs</a>
+        <a href="../index.html#realisations">Réalisations</a>
+        <a href="index.html" aria-current="page">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <a href="../index.html#contact" class="btn btn--sm nav__cta">Devis gratuit</a>
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav__mobile" id="navMobile" aria-label="Navigation mobile">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#tarifs">Tarifs</a>
+      <a href="../index.html#realisations">Réalisations</a>
+      <a href="index.html" aria-current="page">Blog</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="../index.html#contact" class="btn btn--sm">Devis gratuit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container">
+        <p class="breadcrumb"><a href="../index.html">Accueil</a> / Blog</p>
+        <h1 class="page-head__title">Conseils pour grandir en ligne.</h1>
+        <p class="page-head__lead">
+          Sites web, e-commerce, publicité et visibilité : des conseils concrets pour
+          les entreprises qui veulent prendre une longueur d'avance.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="posts">
+          <article class="post reveal">
+            <a href="site-web-entreprise-algerie.html" class="post__link">
+              <div class="post__media" aria-hidden="true"><span>01</span></div>
+              <div class="post__body">
+                <p class="post__meta">Sites web · 20 oct. 2026</p>
+                <h3>Pourquoi votre entreprise a besoin d'un site web en 2026</h3>
+                <p>Une page Facebook ne suffit plus. Voici ce qu'un vrai site apporte à votre crédibilité et à vos ventes.</p>
+                <span class="post__more">Lire l'article</span>
+              </div>
+            </a>
+          </article>
+          <article class="post reveal">
+            <a href="vitrine-ou-e-commerce.html" class="post__link">
+              <div class="post__media" aria-hidden="true"><span>02</span></div>
+              <div class="post__body">
+                <p class="post__meta">Stratégie · 13 oct. 2026</p>
+                <h3>Site vitrine ou e-commerce : lequel choisir ?</h3>
+                <p>Présenter ou vendre ? Les bonnes questions à se poser avant de choisir le type de site.</p>
+                <span class="post__more">Lire l'article</span>
+              </div>
+            </a>
+          </article>
+          <article class="post reveal">
+            <a href="publicite-facebook-instagram-algerie.html" class="post__link">
+              <div class="post__media" aria-hidden="true"><span>03</span></div>
+              <div class="post__body">
+                <p class="post__meta">Publicité · 6 oct. 2026</p>
+                <h3>Publicité Facebook &amp; Instagram en Algérie : bien démarrer</h3>
+                <p>Objectif, budget, ciblage : la méthode pour que chaque dinar investi travaille pour vous.</p>
+                <span class="post__more">Lire l'article</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="../assets/logo.jpg" alt="Sancy & Co" />
+        <p>Prenez une longueur d'avance.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navigation pied de page">
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#tarifs">Tarifs</a>
+        <a href="../index.html#realisations">Réalisations</a>
+        <a href="index.html">Blog</a>
+        <a href="../index.html#faq">FAQ</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="tel:0781051893">07 81 05 18 93</a>
+        <a href="tel:0558265352">05 58 26 53 52</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Sancy &amp; Co — Tous droits réservés.</span>
+      <span>Digitalisation d'entreprise</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sancy &amp; Co — Digitalisation d'entreprise</title>
-  <meta name="description" content="Sancy & Co accompagne les entreprises dans leur transformation digitale : sites web, applications, identité de marque, marketing et référencement. Prenez une longueur d'avance." />
+  <meta name="description" content="Sancy & Co accompagne les entreprises dans leur transformation digitale : sites web, applications, identité de marque, marketing et référencement. Devis gratuit. Prenez une longueur d'avance." />
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,21 +21,24 @@
       </a>
       <nav class="nav__links" aria-label="Navigation principale">
         <a href="#services">Services</a>
-        <a href="#approche">Approche</a>
+        <a href="#tarifs">Tarifs</a>
         <a href="#realisations">Réalisations</a>
+        <a href="blog/index.html">Blog</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn--sm nav__cta">Démarrer un projet</a>
+      <a href="#contact" class="btn btn--sm nav__cta">Devis gratuit</a>
       <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span>
       </button>
     </div>
     <nav class="nav__mobile" id="navMobile" aria-label="Navigation mobile">
       <a href="#services">Services</a>
-      <a href="#approche">Approche</a>
+      <a href="#tarifs">Tarifs</a>
       <a href="#realisations">Réalisations</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn--sm">Démarrer un projet</a>
+      <a href="#contact" class="btn btn--sm">Devis gratuit</a>
     </nav>
   </header>
 
@@ -43,26 +46,74 @@
   <section class="hero" id="accueil">
     <div class="hero__glow" aria-hidden="true"></div>
     <div class="container hero__inner">
-      <p class="eyebrow">Digitalisation d'entreprise</p>
-      <h1 class="hero__title">Prenez une longueur<br />d'avance.</h1>
-      <p class="hero__lead">
-        Nous concevons l'identité, les plateformes et la présence digitale
-        des entreprises qui veulent marquer leur époque. Sobre, précis, durable.
-      </p>
-      <div class="hero__actions">
-        <a href="#contact" class="btn">Parlons de votre projet</a>
-        <a href="#services" class="btn btn--ghost">Découvrir nos services</a>
-      </div>
-      <div class="hero__phones">
-        <span class="hero__phones-label">Un conseil immédiat</span>
-        <a href="tel:0781051893">07 81 05 18 93</a>
-        <span class="sep">/</span>
-        <a href="tel:0558265352">05 58 26 53 52</a>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Digitalisation d'entreprise</p>
+          <h1 class="hero__title">Prenez une longueur<br />d'avance.</h1>
+          <p class="hero__lead">
+            Sites web, applications, identité de marque et publicité en ligne :
+            nous donnons à votre entreprise la présence digitale qu'elle mérite.
+            Sobre, précis, rentable.
+          </p>
+          <ul class="hero__points">
+            <li>Design sur-mesure, jamais de modèle générique</li>
+            <li>Un interlocuteur unique, de l'idée au lancement</li>
+            <li>Devis gratuit et sans engagement</li>
+          </ul>
+          <div class="hero__actions">
+            <a href="#tarifs" class="btn">Voir nos tarifs</a>
+            <a href="#services" class="btn btn--ghost">Nos services</a>
+          </div>
+          <div class="hero__phones">
+            <span class="hero__phones-label">Un conseil immédiat</span>
+            <a href="tel:0781051893">07 81 05 18 93</a>
+            <span class="sep">/</span>
+            <a href="tel:0558265352">05 58 26 53 52</a>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <p class="eyebrow">Devis gratuit</p>
+          <h2 class="hero__card-title">Votre projet, chiffré gratuitement.</h2>
+          <p class="hero__card-lead">Laissez-nous vos coordonnées, un expert vous rappelle pour en parler.</p>
+
+          <form class="lead-form js-lead" novalidate>
+            <input type="hidden" name="subject" value="Demande de rappel (accueil) — Site Sancy & Co" />
+            <input type="hidden" name="from_name" value="Site Sancy & Co" />
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="field">
+              <label for="h-name">Nom</label>
+              <input type="text" id="h-name" name="name" placeholder="Votre nom" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="h-phone">Téléphone</label>
+              <input type="tel" id="h-phone" name="phone" placeholder="05 / 06 / 07 …" autocomplete="tel" required />
+            </div>
+            <div class="field">
+              <label for="h-service">Votre besoin</label>
+              <select id="h-service" name="service" required>
+                <option value="" disabled selected>Choisir un service</option>
+                <option>Site One Page</option>
+                <option>Site vitrine</option>
+                <option>Site entreprise</option>
+                <option>Site e-commerce</option>
+                <option>Application mobile</option>
+                <option>Identité de marque</option>
+                <option>Publicité Meta / Google</option>
+                <option>Référencement SEO</option>
+                <option>Autre / je ne sais pas encore</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--full btn--submit">
+              <span class="btn__label">Être rappelé gratuitement</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form__note" role="status" aria-live="polite" hidden></p>
+            <p class="lead-form__fine">Sans engagement · Vos coordonnées restent confidentielles</p>
+          </form>
+        </div>
       </div>
     </div>
-    <a href="#services" class="hero__scroll" aria-label="Défiler vers les services">
-      <span></span>
-    </a>
   </section>
 
   <!-- SERVICES -->
@@ -112,8 +163,94 @@
     </div>
   </section>
 
+  <!-- TARIFS -->
+  <section class="section section--alt" id="tarifs">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Tarifs</p>
+        <h2 class="section__title">Des offres claires, sans surprise.</h2>
+        <p class="section__intro">
+          Choisissez le pack adapté à votre activité. Chaque projet reçoit ensuite
+          un devis précis et gratuit, ajusté à vos besoins réels.
+        </p>
+      </div>
+
+      <div class="pricing">
+        <article class="price reveal">
+          <p class="price__name">One Page</p>
+          <p class="price__for">Pour être présent en ligne, vite et bien.</p>
+          <p class="price__from">À partir de</p>
+          <p class="price__amount">35 000 <span>DA</span></p>
+          <ul class="price__list">
+            <li>Une page élégante et complète</li>
+            <li>Design sur-mesure, adapté au mobile</li>
+            <li>Formulaire de contact</li>
+            <li>Bouton WhatsApp</li>
+            <li>Mise en ligne incluse</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full" data-pack="Site One Page">Choisir ce pack</a>
+        </article>
+
+        <article class="price reveal">
+          <p class="price__name">Vitrine</p>
+          <p class="price__for">Pour présenter votre entreprise et vos services.</p>
+          <p class="price__from">À partir de</p>
+          <p class="price__amount">60 000 <span>DA</span></p>
+          <ul class="price__list">
+            <li>Pages illimitées</li>
+            <li>Design sur-mesure, adapté au mobile</li>
+            <li>Espace d'administration</li>
+            <li>Présentation de vos services</li>
+            <li>Référencement de base</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full" data-pack="Site vitrine">Choisir ce pack</a>
+        </article>
+
+        <article class="price price--featured reveal">
+          <span class="price__badge">Le plus choisi</span>
+          <p class="price__name">Entreprise</p>
+          <p class="price__for">Pour une image forte et un site qui évolue avec vous.</p>
+          <p class="price__from">À partir de</p>
+          <p class="price__amount">100 000 <span>DA</span></p>
+          <ul class="price__list">
+            <li>Tout le pack Vitrine</li>
+            <li>Blog &amp; actualités</li>
+            <li>Catalogue et catégories</li>
+            <li>Site multilingue (FR / AR / EN)</li>
+            <li>Formation à l'administration</li>
+          </ul>
+          <a href="#contact" class="btn btn--full" data-pack="Site entreprise">Choisir ce pack</a>
+        </article>
+
+        <article class="price reveal">
+          <p class="price__name">E-commerce</p>
+          <p class="price__for">Pour vendre en ligne partout en Algérie.</p>
+          <p class="price__from">À partir de</p>
+          <p class="price__amount">180 000 <span>DA</span></p>
+          <ul class="price__list">
+            <li>Produits illimités</li>
+            <li>Panier &amp; gestion des commandes</li>
+            <li>Espace client</li>
+            <li>Paiement à la livraison</li>
+            <li>Tableau de bord des ventes</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost btn--full" data-pack="Site e-commerce">Choisir ce pack</a>
+        </article>
+      </div>
+
+      <div class="quote-list reveal">
+        <p class="quote-list__title">Également sur devis</p>
+        <a href="#contact" class="quote-list__item" data-pack="Application mobile"><span>Application mobile</span><em>Sur devis</em></a>
+        <a href="#contact" class="quote-list__item" data-pack="Identité de marque"><span>Identité de marque — logo, charte, supports</span><em>Sur devis</em></a>
+        <a href="#contact" class="quote-list__item" data-pack="Publicité Meta / Google"><span>Publicité Facebook, Instagram &amp; Google</span><em>Sur devis</em></a>
+        <a href="#contact" class="quote-list__item" data-pack="Référencement SEO"><span>Référencement SEO</span><em>Sur devis</em></a>
+      </div>
+      <p class="pricing__note">Prix indicatifs, hors options. Le tarif définitif est fixé dans votre devis.</p>
+    </div>
+  </section>
+
   <!-- APPROCHE -->
-  <section class="section section--alt" id="approche">
+  <section class="section" id="approche">
     <div class="container">
       <div class="section__head reveal">
         <p class="eyebrow">Notre approche</p>
@@ -150,7 +287,7 @@
   </section>
 
   <!-- REALISATIONS / STATS -->
-  <section class="section" id="realisations">
+  <section class="section section--alt" id="realisations">
     <div class="container">
       <div class="section__head reveal">
         <p class="eyebrow">Réalisations</p>
@@ -189,8 +326,98 @@
     </div>
   </section>
 
+  <!-- BLOG -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section__head section__head--row reveal">
+        <div>
+          <p class="eyebrow">Blog</p>
+          <h2 class="section__title">Conseils pour grandir en ligne.</h2>
+        </div>
+        <a href="blog/index.html" class="link-more">Tous les articles</a>
+      </div>
+
+      <div class="posts">
+        <article class="post reveal">
+          <a href="blog/site-web-entreprise-algerie.html" class="post__link">
+            <div class="post__media" aria-hidden="true"><span>01</span></div>
+            <div class="post__body">
+              <p class="post__meta">Sites web · 20 oct. 2026</p>
+              <h3>Pourquoi votre entreprise a besoin d'un site web en 2026</h3>
+              <p>Une page Facebook ne suffit plus. Voici ce qu'un vrai site apporte à votre crédibilité et à vos ventes.</p>
+              <span class="post__more">Lire l'article</span>
+            </div>
+          </a>
+        </article>
+        <article class="post reveal">
+          <a href="blog/vitrine-ou-e-commerce.html" class="post__link">
+            <div class="post__media" aria-hidden="true"><span>02</span></div>
+            <div class="post__body">
+              <p class="post__meta">Stratégie · 13 oct. 2026</p>
+              <h3>Site vitrine ou e-commerce : lequel choisir ?</h3>
+              <p>Présenter ou vendre ? Les bonnes questions à se poser avant de choisir le type de site.</p>
+              <span class="post__more">Lire l'article</span>
+            </div>
+          </a>
+        </article>
+        <article class="post reveal">
+          <a href="blog/publicite-facebook-instagram-algerie.html" class="post__link">
+            <div class="post__media" aria-hidden="true"><span>03</span></div>
+            <div class="post__body">
+              <p class="post__meta">Publicité · 6 oct. 2026</p>
+              <h3>Publicité Facebook &amp; Instagram en Algérie : bien démarrer</h3>
+              <p>Objectif, budget, ciblage : la méthode pour que chaque dinar investi travaille pour vous.</p>
+              <span class="post__more">Lire l'article</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="container faq">
+      <div class="faq__head reveal">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2 class="section__title">Vous vous posez la question ?</h2>
+        <p class="section__intro">
+          Vous ne trouvez pas votre réponse ? Appelez-nous au
+          <a href="tel:0781051893" class="link-gold">07 81 05 18 93</a>.
+        </p>
+      </div>
+
+      <div class="faq__list reveal">
+        <details class="faq__item">
+          <summary>Combien coûte un site internet ?</summary>
+          <p>Nos packs démarrent à 35 000 DA pour un site One Page et vont jusqu'au site e-commerce complet à partir de 180 000 DA. Le prix final dépend de vos besoins : nous vous remettons un devis précis et gratuit avant tout engagement.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Quels sont les délais de réalisation ?</summary>
+          <p>En général, comptez une à deux semaines pour un site One Page ou vitrine, et trois à six semaines pour un site e-commerce. Le délai dépend surtout de la rapidité avec laquelle les contenus (textes, photos, produits) nous sont transmis.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Pourrai-je modifier mon site moi-même ?</summary>
+          <p>Oui. À partir du pack Vitrine, votre site dispose d'un espace d'administration simple pour modifier vos textes, images, services ou produits. Nous vous formons à son utilisation lors de la livraison.</p>
+        </details>
+        <details class="faq__item">
+          <summary>L'hébergement et le nom de domaine sont-ils inclus ?</summary>
+          <p>Nous nous occupons de toute la mise en ligne : réservation du nom de domaine, hébergement et configuration. Les conditions exactes (durée, renouvellement) sont détaillées dans votre devis.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Comment lancer une publicité Facebook ou Instagram ?</summary>
+          <p>Il vous suffit d'une page Facebook ou d'un compte Instagram professionnel. Ensemble, nous définissons l'objectif, le budget journalier et la cible (régions, âge, centres d'intérêt). Nous lançons la campagne, l'optimisons et vous transmettons un rapport des résultats.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Pourquoi un site plutôt qu'une simple page Facebook ?</summary>
+          <p>Votre page Facebook appartient à la plateforme ; votre site vous appartient. Il rassure vos clients, apparaît sur Google, présente vos offres sans distraction et transforme les visiteurs en demandes de devis. Les deux se complètent : la publicité attire, le site convertit.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
-  <section class="section section--alt" id="contact">
+  <section class="section" id="contact">
     <div class="container contact">
       <div class="contact__text reveal">
         <p class="eyebrow">Contact</p>
@@ -222,41 +449,47 @@
         </a>
       </div>
 
-      <form class="contact__form reveal" id="contactForm" novalidate>
-        <!-- Web3Forms : remplacez la valeur par votre clé d'accès gratuite depuis https://web3forms.com -->
-        <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS" />
+      <form class="contact__form js-lead reveal" id="contactForm" novalidate>
         <input type="hidden" name="subject" value="Nouvelle demande — Site Sancy & Co" />
         <input type="hidden" name="from_name" value="Site Sancy & Co" />
         <!-- Honeypot anti-spam : masqué aux humains, rempli par les robots -->
-        <input
-          type="checkbox"
-          name="botcheck"
-          class="hp"
-          tabindex="-1"
-          autocomplete="off"
-          aria-hidden="true"
-        />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="field">
           <label for="name">Nom</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required />
+          <input type="text" id="name" name="name" placeholder="Votre nom" autocomplete="name" required />
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="vous@entreprise.com" required />
+          <input type="email" id="email" name="email" placeholder="vous@entreprise.com" autocomplete="email" required />
         </div>
         <div class="field">
           <label for="phone">Téléphone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Votre numéro" />
+          <input type="tel" id="phone" name="phone" placeholder="Votre numéro" autocomplete="tel" />
+        </div>
+        <div class="field">
+          <label for="c-service">Service souhaité</label>
+          <select id="c-service" name="service">
+            <option value="" selected>Choisir un service (facultatif)</option>
+            <option>Site One Page</option>
+            <option>Site vitrine</option>
+            <option>Site entreprise</option>
+            <option>Site e-commerce</option>
+            <option>Application mobile</option>
+            <option>Identité de marque</option>
+            <option>Publicité Meta / Google</option>
+            <option>Référencement SEO</option>
+            <option>Autre / je ne sais pas encore</option>
+          </select>
         </div>
         <div class="field">
           <label for="message">Votre projet</label>
           <textarea id="message" name="message" rows="4" placeholder="Parlez-nous de votre projet…" required></textarea>
         </div>
-        <button type="submit" class="btn btn--full" id="formSubmit">
+        <button type="submit" class="btn btn--full btn--submit">
           <span class="btn__label">Envoyer la demande</span>
           <span class="btn__spinner" aria-hidden="true"></span>
         </button>
-        <p class="form__note" id="formNote" role="status" aria-live="polite" hidden></p>
+        <p class="form__note" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
   </section>
@@ -270,8 +503,10 @@
       </div>
       <nav class="footer__nav" aria-label="Navigation pied de page">
         <a href="#services">Services</a>
-        <a href="#approche">Approche</a>
+        <a href="#tarifs">Tarifs</a>
         <a href="#realisations">Réalisations</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer__contact">
