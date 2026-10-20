@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>/* thème choisi, appliqué avant l'affichage (pas de flash) */try{if(localStorage.getItem("sancy-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
   <title>Publicité Facebook &amp; Instagram en Algérie : bien démarrer — Sancy &amp; Co</title>
   <meta name="description" content="Objectif, préparation de la page, ciblage, budget et mesure des résultats : la méthode pour réussir vos publicités Facebook et Instagram en Algérie." />
   <link rel="icon" type="image/png" href="../assets/logo.png?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=4" />
+  <link rel="stylesheet" href="../styles.css?v=5" />
 </head>
 <body>
 
   <!-- NAVBAR -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="../index.html" class="nav__brand" aria-label="Sancy & Co — accueil">
-        <img src="../assets/logo.png?v=4" alt="Sancy & Co" />
-      </a>
+      <div class="nav__left">
+        <a href="../index.html" class="nav__brand" aria-label="Sancy & Co — accueil"><span class="logo"><img src="../assets/logo.png?v=4" alt="Sancy & Co" /></span></a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Passer en mode clair" title="Mode clair / sombre">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8Z"/></svg>
+        </button>
+      </div>
       <nav class="nav__links" aria-label="Navigation principale">
         <a href="../index.html#services">Services</a>
         <a href="../index.html#tarifs">Tarifs</a>
@@ -169,7 +174,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="footer__logo"><img src="../assets/logo.png?v=4" alt="Sancy & Co" /></span>
+        <span class="logo footer__logo"><img src="../assets/logo.png?v=4" alt="Sancy & Co" /></span>
         <p>Prenez une longueur d'avance.</p>
       </div>
       <nav class="footer__nav" aria-label="Navigation pied de page">
@@ -191,6 +196,6 @@
     </div>
   </footer>
 
-  <script src="../script.js?v=4"></script>
+  <script src="../script.js?v=5"></script>
 </body>
 </html>

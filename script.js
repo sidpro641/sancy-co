@@ -6,6 +6,28 @@
      Créez-la gratuitement sur https://web3forms.com et collez-la ici. */
   var WEB3FORMS_ACCESS_KEY = "VOTRE_CLE_WEB3FORMS";
 
+  /* Thème clair / sombre — le choix est mémorisé (le <head> l'applique avant l'affichage) */
+  var root = document.documentElement;
+  var themeToggle = document.getElementById("themeToggle");
+  function applyTheme(theme) {
+    if (theme === "light") root.setAttribute("data-theme", "light");
+    else root.removeAttribute("data-theme");
+    themeToggle.setAttribute("aria-label", theme === "light" ? "Passer en mode sombre" : "Passer en mode clair");
+  }
+  if (themeToggle) {
+    applyTheme(root.getAttribute("data-theme") === "light" ? "light" : "dark");
+    themeToggle.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      try { localStorage.setItem("sancy-theme", next); } catch (e) {}
+      var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (document.startViewTransition && !calm) {
+        document.startViewTransition(function () { applyTheme(next); });
+      } else {
+        applyTheme(next);
+      }
+    });
+  }
+
   /* Navbar background on scroll */
   var nav = document.getElementById("nav");
   function onScroll() {
