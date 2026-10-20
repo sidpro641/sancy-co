@@ -120,7 +120,8 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--line);
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; }
-.nav__brand img { height: 34px; width: auto; }
+/* assets/logo.png : logo recadré à fond transparent (tiré de logo.jpg) */
+.nav__brand img { width: 136px; height: auto; }
 
 .nav__links { display: flex; gap: 38px; }
 .nav__links a {
@@ -144,11 +145,15 @@ a { color: inherit; text-decoration: none; }
 .nav__burger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 6px;
+  width: 44px; height: 44px;   /* zone tactile confortable */
+  margin-right: -9px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 0;
 }
 .nav__burger span {
   width: 26px; height: 1.5px;
@@ -202,7 +207,7 @@ a { color: inherit; text-decoration: none; }
 .hero__title {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(2.7rem, 5.8vw, 5.4rem);
+  font-size: clamp(2.7rem, 5.8vw, 4.6rem);  /* max : "Prenez une longueur" tient dans la colonne de 607px */
   line-height: 0.98;
   letter-spacing: -0.5px;
   color: #fff;
@@ -492,7 +497,8 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 46px;
   border-bottom: 1px solid var(--line-2);
 }
-.footer__brand img { height: 36px; margin-bottom: 16px; }
+.footer__logo { display: block; margin-bottom: 16px; }
+.footer__logo img { width: 168px; height: auto; }
 .footer__brand p { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1.1rem; }
 .footer__nav { display: flex; gap: 30px; flex-wrap: wrap; }
 .footer__nav a { color: var(--muted); font-size: 0.86rem; transition: color 0.3s; }
