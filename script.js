@@ -108,7 +108,24 @@
     });
   });
 
-  /* Formulaires — envoi via Web3Forms (sans backend) */
+  /* Envoi d'une demande via Web3Forms (sans backend).
+     Résout true si la demande est bien partie, false si Web3Forms la refuse ;
+     rejette si le réseau est injoignable. Partagé avec l'assistant (chatbot.js). */
+  function sendLead(data) {
+    data.append("access_key", WEB3FORMS_ACCESS_KEY);
+    return fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: data
+    }).then(function (res) {
+      return res.json().then(function (json) {
+        return res.ok && !!json && json.success === true;
+      });
+    });
+  }
+  window.sancySendLead = sendLead;
+
+  /* Formulaires de la page */
   document.querySelectorAll("form.js-lead").forEach(function (form) {
     var note = form.querySelector(".form__note");
     var submitBtn = form.querySelector('[type="submit"]');
@@ -137,21 +154,9 @@
       setNote("", null);
       setLoading(true);
 
-      var data = new FormData(form);
-      data.append("access_key", WEB3FORMS_ACCESS_KEY);
-
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Accept": "application/json" },
-        body: data
-      })
-        .then(function (res) {
-          return res.json().then(function (json) {
-            return { ok: res.ok, data: json };
-          });
-        })
-        .then(function (r) {
-          if (r.ok && r.data && r.data.success) {
+      sendLead(new FormData(form))
+        .then(function (sent) {
+          if (sent) {
             form.reset();
             setNote("Merci — votre demande a bien été envoyée. Nous vous recontactons très vite.", "success");
             noteTimer = setTimeout(function () { setNote("", null); }, 9000);
