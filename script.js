@@ -100,6 +100,29 @@
     counters.forEach(function (c) { co.observe(c); });
   }
 
+  /* Cartes de services animées : .is-on au survol (souris), au focus clavier,
+     et sur écran tactile quand la carte traverse le centre de l'écran */
+  var offers = document.querySelectorAll(".offer");
+  var canHover = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  offers.forEach(function (card) {
+    card.addEventListener("focusin", function () { card.classList.add("is-on"); });
+    card.addEventListener("focusout", function (e) {
+      if (!card.contains(e.relatedTarget) && !card.matches(":hover")) card.classList.remove("is-on");
+    });
+    if (canHover) {
+      card.addEventListener("mouseenter", function () { card.classList.add("is-on"); });
+      card.addEventListener("mouseleave", function () {
+        if (!card.contains(document.activeElement)) card.classList.remove("is-on");
+      });
+    }
+  });
+  if (!canHover && "IntersectionObserver" in window) {
+    var offerIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.classList.toggle("is-on", entry.isIntersecting); });
+    }, { rootMargin: "-30% 0px -30% 0px" });
+    offers.forEach(function (card) { offerIO.observe(card); });
+  }
+
   /* "Choisir ce pack" : pré-remplit le service dans le formulaire de contact */
   var contactService = document.getElementById("c-service");
   document.querySelectorAll("[data-pack]").forEach(function (link) {

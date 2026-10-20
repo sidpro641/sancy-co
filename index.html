@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Instrument+Sans:wght@400..600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
 
@@ -133,37 +133,176 @@
         </p>
       </div>
 
-      <div class="grid grid--services">
-        <article class="card reveal">
-          <span class="card__num">01</span>
-          <h3>Sites Web</h3>
-          <p>Sites vitrines, e-commerce et plateformes sur-mesure. Rapides, élégants, pensés pour convertir.</p>
+      <!-- Cartes animées : la scène (.offer__stage) s'anime au survol, au focus
+           clavier, ou quand la carte passe au centre de l'écran sur mobile -->
+      <div class="offers">
+
+        <article class="offer reveal">
+          <div class="offer__stage st-web" aria-hidden="true">
+            <div class="br">
+              <div class="br__top"><i></i><i></i><i></i><span class="br__url"></span></div>
+              <div class="br__body">
+                <span class="br__hero"></span>
+                <span class="br__line br__line--1"></span>
+                <span class="br__line br__line--2"></span>
+                <span class="br__cta"></span>
+                <span class="br__img"></span>
+              </div>
+              <svg class="br__cursor" viewBox="0 0 24 24"><path d="M5 3l14 7.5-6.2 1.6L10.5 19z"/></svg>
+            </div>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">01</span>
+            <h3>Sites Web</h3>
+            <p>Vitrines et sites d'entreprise sur-mesure, rapides, pensés pour transformer vos visiteurs en clients.</p>
+            <a href="#contact" class="offer__link" data-pack="Site vitrine">Demander un devis</a>
+          </div>
         </article>
-        <article class="card reveal">
-          <span class="card__num">02</span>
-          <h3>Applications Mobiles</h3>
-          <p>Applications iOS &amp; Android fluides et fiables, taillées pour vos clients et vos équipes.</p>
+
+        <article class="offer reveal">
+          <div class="offer__stage st-shop" aria-hidden="true">
+            <div class="shop__product">
+              <span class="shop__thumb"></span>
+              <span class="shop__l"></span>
+              <span class="shop__l shop__l--short"></span>
+              <span class="shop__add"></span>
+            </div>
+            <span class="shop__fly"></span>
+            <div class="shop__cart">
+              <svg viewBox="0 0 24 24"><path d="M3 4h2.2l2.3 10.5h10.3L20 7.5H6.4"/><circle cx="9" cy="19" r="1.4"/><circle cx="16.5" cy="19" r="1.4"/></svg>
+              <span class="shop__badge">1</span>
+            </div>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">02</span>
+            <h3>E-commerce</h3>
+            <p>Votre boutique en ligne : catalogue, panier, commandes et paiement à la livraison.</p>
+            <a href="#contact" class="offer__link" data-pack="Site e-commerce">Demander un devis</a>
+          </div>
         </article>
-        <article class="card reveal">
-          <span class="card__num">03</span>
-          <h3>Identité de Marque</h3>
-          <p>Logo, charte graphique et supports de communication qui donnent à votre marque sa juste valeur.</p>
+
+        <article class="offer reveal">
+          <div class="offer__stage st-phone" aria-hidden="true">
+            <div class="ph">
+              <span class="ph__notch"></span>
+              <div class="ph__screen">
+                <span class="ph__bar"></span>
+                <span class="ph__card"></span>
+                <span class="ph__card"></span>
+                <span class="ph__row"></span>
+                <span class="ph__row ph__row--short"></span>
+                <span class="ph__btn"></span>
+              </div>
+            </div>
+            <div class="ph__notif"><span class="ph__dot"></span>Nouvelle commande</div>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">03</span>
+            <h3>Application mobile</h3>
+            <p>Applications iOS &amp; Android pour vos clients ou vos équipes : commande, réservation, fidélité.</p>
+            <a href="#contact" class="offer__link" data-pack="Application mobile">Demander un devis</a>
+          </div>
         </article>
-        <article class="card reveal">
-          <span class="card__num">04</span>
-          <h3>Marketing Digital</h3>
-          <p>Campagnes Meta, Google et réseaux sociaux. Une visibilité mesurée, pilotée par les résultats.</p>
+
+        <article class="offer reveal">
+          <div class="offer__stage st-brand" aria-hidden="true">
+            <span class="brand__type">Aa</span>
+            <svg class="brand__dia" viewBox="0 0 120 100">
+              <path class="brand__fill" d="M30 20H90L110 42L60 92L10 42Z"/>
+              <path class="brand__stroke" pathLength="1" d="M30 20H90L110 42L60 92L10 42Z"/>
+              <path class="brand__stroke brand__stroke--in" pathLength="1" d="M10 42H110M30 20L45 42L60 20L75 42L90 20M45 42L60 92L75 42"/>
+            </svg>
+            <div class="brand__swatches"><i></i><i></i><i></i></div>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">04</span>
+            <h3>Identité de marque</h3>
+            <p>Logo, charte graphique et supports : une image cohérente qui inspire confiance.</p>
+            <a href="#contact" class="offer__link" data-pack="Identité de marque">Demander un devis</a>
+          </div>
         </article>
-        <article class="card reveal">
-          <span class="card__num">05</span>
-          <h3>Référencement SEO</h3>
-          <p>Un positionnement durable sur les moteurs de recherche, pour être trouvé au bon moment.</p>
+
+        <article class="offer reveal">
+          <div class="offer__stage st-ads" aria-hidden="true">
+            <div class="ads__post">
+              <div class="ads__head"><i></i><span></span></div>
+              <span class="ads__img"></span>
+              <div class="ads__actions"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span></span></div>
+            </div>
+            <div class="ads__hearts">
+              <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+            </div>
+            <div class="ads__bars"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">05</span>
+            <h3>Publicité en ligne</h3>
+            <p>Campagnes Facebook, Instagram et Google, ciblées et suivies, pour des résultats mesurables.</p>
+            <a href="#contact" class="offer__link" data-pack="Publicité Meta / Google">Demander un devis</a>
+          </div>
         </article>
-        <article class="card reveal">
-          <span class="card__num">06</span>
-          <h3>Transformation Digitale</h3>
-          <p>Automatisation, outils internes et conseil pour digitaliser vos processus sans friction.</p>
+
+        <article class="offer reveal">
+          <div class="offer__stage st-seo" aria-hidden="true">
+            <div class="seo__bar">
+              <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>
+              <span class="seo__query">agence web Alger</span>
+            </div>
+            <div class="seo__results">
+              <div class="seo__row seo__row--a"><i></i><span></span></div>
+              <div class="seo__row seo__row--b"><i></i><span></span></div>
+              <div class="seo__row seo__row--you"><i></i><span></span><b>N°1</b></div>
+            </div>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">06</span>
+            <h3>Référencement SEO</h3>
+            <p>Apparaître en tête de Google quand vos clients recherchent votre métier.</p>
+            <a href="#contact" class="offer__link" data-pack="Référencement SEO">Demander un devis</a>
+          </div>
         </article>
+
+        <article class="offer reveal">
+          <div class="offer__stage st-flow" aria-hidden="true">
+            <svg class="flow" viewBox="0 0 240 120">
+              <path class="flow__link flow__link--1" pathLength="1" d="M58 60H98"/>
+              <path class="flow__link flow__link--2" pathLength="1" d="M142 60H182"/>
+              <circle class="flow__node flow__node--1" cx="38" cy="60" r="19"/>
+              <path class="flow__icon flow__icon--1" d="M31 50h10l4 4v16H31zM34 58h8M34 63h8"/>
+              <circle class="flow__ring" cx="120" cy="60" r="27" pathLength="24"/>
+              <circle class="flow__node flow__node--2" cx="120" cy="60" r="19"/>
+              <circle class="flow__icon flow__icon--2" cx="120" cy="60" r="6"/>
+              <circle class="flow__node flow__node--3" cx="202" cy="60" r="19"/>
+              <path class="flow__icon flow__icon--3" d="M194 60l5.5 5.5L211 54"/>
+            </svg>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">07</span>
+            <h3>Transformation digitale</h3>
+            <p>Automatisation, outils internes et conseil pour digitaliser vos processus sans friction.</p>
+            <a href="#contact" class="offer__link" data-pack="Autre / je ne sais pas encore">Demander un devis</a>
+          </div>
+        </article>
+
+        <article class="offer reveal">
+          <div class="offer__stage st-host" aria-hidden="true">
+            <div class="host__stack">
+              <div class="host__unit"><i></i><i></i><span></span></div>
+              <div class="host__unit"><i></i><i></i><span></span></div>
+              <div class="host__unit"><i></i><i></i><span></span></div>
+            </div>
+            <svg class="host__shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.2-2.9 7.6-7 9.5-4.1-1.9-7-5.3-7-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.3-4.6"/></svg>
+          </div>
+          <div class="offer__body">
+            <span class="offer__num">08</span>
+            <h3>Hébergement &amp; suivi</h3>
+            <p>Nom de domaine, hébergement, mise en ligne et accompagnement après la livraison.</p>
+            <a href="#contact" class="offer__link" data-pack="Autre / je ne sais pas encore">Demander un devis</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -525,7 +664,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
   <script src="chatbot.js?v=2"></script>
 </body>
 </html>
