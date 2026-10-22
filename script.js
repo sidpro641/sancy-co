@@ -28,6 +28,26 @@
     });
   }
 
+  /* Titre : le mot en or change toutes les 2,4 s (sortie par le haut, entrée par le bas).
+     Mouvement réduit demandé par le système : on garde le premier mot, sans rotation. */
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("[data-rotator]").forEach(function (rotator) {
+    var words = rotator.children;
+    if (words.length < 2 || reduceMotion) return;
+    var current = 0;
+    setInterval(function () {
+      if (document.hidden) return;
+      var out = words[current];
+      current = (current + 1) % words.length;
+      var next = words[current];
+      out.classList.remove("is-in");
+      out.classList.add("is-out");
+      next.classList.remove("is-out");
+      next.classList.add("is-in");
+      setTimeout(function () { out.classList.remove("is-out"); }, 600);
+    }, 2400);
+  });
+
   /* Navbar background on scroll */
   var nav = document.getElementById("nav");
   function onScroll() {

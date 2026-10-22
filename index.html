@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Instrument+Sans:wght@400..600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
 
@@ -50,11 +50,18 @@
   <!-- HERO -->
   <section class="hero" id="accueil">
     <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <span class="hero__mark" aria-hidden="true">S</span>
     <div class="container hero__inner">
       <div class="hero__grid">
         <div class="hero__content">
-          <p class="eyebrow">Digitalisation d'entreprise</p>
-          <h1 class="hero__title">Prenez une longueur<br />d'avance.</h1>
+          <p class="eyebrow">Prenez une longueur d'avance</p>
+          <h1 class="hero__title">
+            <span class="sr-only">Nous créons les sites web, applications, boutiques, marques et campagnes qui vous démarquent.</span>
+            <span class="line" aria-hidden="true"><span>Nous créons les</span></span>
+            <span class="line" aria-hidden="true"><span class="rotator" data-rotator><span class="is-in">sites web</span><span>applications</span><span>boutiques</span><span>marques</span><span>campagnes</span></span></span>
+            <span class="line" aria-hidden="true"><span>qui vous démarquent.</span></span>
+          </h1>
           <p class="hero__lead">
             Sites web, applications, identité de marque et publicité en ligne :
             nous donnons à votre entreprise la présence digitale qu'elle mérite.
@@ -119,13 +126,40 @@
         </div>
       </div>
     </div>
+    <a href="#services" class="hero__scroll" aria-label="Défiler vers les services"><em>Défiler</em><span></span></a>
   </section>
+
+  <!-- BANDEAU DÉFILANT -->
+  <div class="marquee" role="region" aria-label="Nos savoir-faire">
+    <div class="marquee__track">
+      <ul class="marquee__list">
+        <li>Sites web</li>
+        <li>Applications mobiles</li>
+        <li>E-commerce</li>
+        <li>Identité de marque</li>
+        <li>Publicité Meta &amp; Google</li>
+        <li>Référencement SEO</li>
+        <li>Transformation digitale</li>
+        <li>Hébergement &amp; suivi</li>
+      </ul>
+      <ul class="marquee__list" aria-hidden="true">
+        <li>Sites web</li>
+        <li>Applications mobiles</li>
+        <li>E-commerce</li>
+        <li>Identité de marque</li>
+        <li>Publicité Meta &amp; Google</li>
+        <li>Référencement SEO</li>
+        <li>Transformation digitale</li>
+        <li>Hébergement &amp; suivi</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- SERVICES -->
   <section class="section" id="services">
     <div class="container">
       <div class="section__head reveal">
-        <p class="eyebrow">Nos services</p>
+        <p class="eyebrow"><span class="eyebrow__num">01</span>Nos services</p>
         <h2 class="section__title">Tout ce qu'il faut pour exister en ligne.</h2>
         <p class="section__intro">
           Une offre complète et cohérente, pensée pour faire grandir votre entreprise —
@@ -311,7 +345,7 @@
   <section class="section section--alt" id="tarifs">
     <div class="container">
       <div class="section__head reveal">
-        <p class="eyebrow">Tarifs</p>
+        <p class="eyebrow"><span class="eyebrow__num">02</span>Tarifs</p>
         <h2 class="section__title">Des offres claires, sans surprise.</h2>
         <p class="section__intro">
           Choisissez le pack adapté à votre activité. Chaque projet reçoit ensuite
@@ -397,7 +431,7 @@
   <section class="section" id="approche">
     <div class="container">
       <div class="section__head reveal">
-        <p class="eyebrow">Notre approche</p>
+        <p class="eyebrow"><span class="eyebrow__num">03</span>Notre approche</p>
         <h2 class="section__title">Une méthode claire, un résultat maîtrisé.</h2>
         <p class="section__intro">
           Chaque projet suit un cheminement précis. Pas d'improvisation : de l'écoute
@@ -407,21 +441,37 @@
 
       <div class="steps">
         <div class="step reveal">
+          <div class="step__mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>brief-cadrage.md</span></div>
+            <ul class="mock__lines"><li>objectifs définis</li><li>cible identifiée</li><li>budget validé</li></ul>
+          </div>
           <span class="step__num">01</span>
           <h3>Écoute &amp; Stratégie</h3>
           <p>Nous comprenons votre métier, vos objectifs et vos clients avant d'écrire la moindre ligne.</p>
         </div>
         <div class="step reveal">
+          <div class="step__mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>maquette-v2.fig</span></div>
+            <ul class="mock__lines"><li>direction visuelle</li><li>pages clés</li><li>validée ensemble</li></ul>
+          </div>
           <span class="step__num">02</span>
           <h3>Conception &amp; Design</h3>
           <p>Une direction visuelle sobre et distinctive, validée ensemble à chaque étape.</p>
         </div>
         <div class="step reveal">
+          <div class="step__mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>build.log</span></div>
+            <ul class="mock__lines"><li>code optimisé</li><li>testé sur mobile</li><li>démo client prête</li></ul>
+          </div>
           <span class="step__num">03</span>
           <h3>Développement</h3>
           <p>Une réalisation soignée, performante et évolutive, construite pour durer.</p>
         </div>
         <div class="step reveal">
+          <div class="step__mock" aria-hidden="true">
+            <div class="mock__bar"><i></i><i></i><i></i><span>votre-site.com</span></div>
+            <ul class="mock__lines"><li class="is-live">En ligne</li><li>formation faite</li><li>suivi activé</li></ul>
+          </div>
           <span class="step__num">04</span>
           <h3>Lancement &amp; Suivi</h3>
           <p>Mise en ligne, formation et accompagnement. Nous restons à vos côtés après la livraison.</p>
@@ -434,7 +484,7 @@
   <section class="section section--alt" id="realisations">
     <div class="container">
       <div class="section__head reveal">
-        <p class="eyebrow">Réalisations</p>
+        <p class="eyebrow"><span class="eyebrow__num">04</span>Réalisations</p>
         <h2 class="section__title">Des entreprises qui ont pris de l'avance.</h2>
         <p class="section__intro">
           Nous accompagnons des marques exigeantes, du commerce de proximité
@@ -444,7 +494,7 @@
 
       <div class="stats">
         <div class="stat reveal">
-          <span class="stat__num" data-count="120">0</span><span class="stat__plus">+</span>
+          <span class="stat__num" data-count="15">0</span>
           <p>Projets livrés</p>
         </div>
         <div class="stat reveal">
@@ -475,7 +525,7 @@
     <div class="container">
       <div class="section__head section__head--row reveal">
         <div>
-          <p class="eyebrow">Blog</p>
+          <p class="eyebrow"><span class="eyebrow__num">05</span>Blog</p>
           <h2 class="section__title">Conseils pour grandir en ligne.</h2>
         </div>
         <a href="blog/index.html" class="link-more">Tous les articles</a>
@@ -523,7 +573,7 @@
   <section class="section section--alt" id="faq">
     <div class="container faq">
       <div class="faq__head reveal">
-        <p class="eyebrow">Questions fréquentes</p>
+        <p class="eyebrow"><span class="eyebrow__num">06</span>Questions fréquentes</p>
         <h2 class="section__title">Vous vous posez la question ?</h2>
         <p class="section__intro">
           Vous ne trouvez pas votre réponse ? Appelez-nous au
@@ -564,7 +614,7 @@
   <section class="section" id="contact">
     <div class="container contact">
       <div class="contact__text reveal">
-        <p class="eyebrow">Contact</p>
+        <p class="eyebrow"><span class="eyebrow__num">07</span>Contact</p>
         <h2 class="section__title">Parlons de votre projet<br />dès aujourd'hui.</h2>
         <p class="section__intro">
           Dites-nous où vous en êtes, nous vous dirons comment prendre une longueur d'avance.
@@ -664,7 +714,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
   <script src="chatbot.js?v=2"></script>
 </body>
 </html>

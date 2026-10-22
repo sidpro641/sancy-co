@@ -303,7 +303,7 @@ a { color: inherit; text-decoration: none; }
 .hero__title {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(2.6rem, 5vw, 4rem);  /* max : "Prenez une longueur" tient sur une ligne dans la colonne de 607px */
+  font-size: clamp(2.4rem, 4.6vw, 3.7rem);  /* max : "qui vous démarquent." tient sur une ligne dans la colonne de 607px */
   line-height: 0.98;
   letter-spacing: -0.5px;
   color: var(--heading);
@@ -1641,3 +1641,199 @@ a { color: inherit; text-decoration: none; }
   .chat-panel, .chat-teaser, .msg, .chat-choices { animation: none; }
   .msg--typing span { animation: none; }
 }
+
+/* =====================================================
+   Effets éditoriaux (inspirés de magar-developpement.fr)
+   ===================================================== */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Titre : lignes qui montent + mot qui change ---------- */
+.hero__title .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.14em;   /* place pour les jambages (p, g) sous le masque */
+  margin-bottom: -0.14em;
+}
+.hero__title .line > span { display: inline-block; transform: translateY(105%); animation: lineUp 0.95s var(--ease) forwards; }
+.hero__title .line:nth-child(2) > span { animation-delay: 0.1s; }
+.hero__title .line:nth-child(3) > span { animation-delay: 0.2s; }
+.hero__title .line:nth-child(4) > span { animation-delay: 0.3s; }
+@keyframes lineUp { to { transform: none; } }
+
+.hero__title .line > .rotator { display: inline-grid; vertical-align: baseline; }
+.rotator > span {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+  font-style: italic;
+  padding: 0 0.12em 0.14em 0;   /* italique et jambages dans la zone du dégradé */
+  margin-bottom: -0.14em;
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold-soft) 30%, var(--gold) 50%, var(--gold-dim) 75%, var(--gold) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(55%);
+  transition: opacity 0.38s var(--ease), transform 0.55s var(--ease);
+  animation: shimmer 6s linear infinite;
+}
+.rotator > span.is-in { opacity: 1; transform: none; transition-delay: 0.14s; }
+.rotator > span.is-out { opacity: 0; transform: translateY(-55%); transition-duration: 0.22s, 0.5s; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* ---------- Halo doré mouvant + filigrane ---------- */
+.hero__aurora { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.hero__aurora i {
+  position: absolute;
+  width: min(48vw, 640px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold) 0%, transparent 66%);
+  filter: blur(70px);
+  opacity: 0.16;
+  will-change: transform;
+  animation: drift 24s ease-in-out infinite alternate;
+}
+.hero__aurora i:nth-child(1) { top: -14%; left: 38%; }
+.hero__aurora i:nth-child(2) { bottom: -26%; left: -12%; background: radial-gradient(circle, var(--gold-dim) 0%, transparent 66%); animation-duration: 30s; animation-delay: -8s; }
+.hero__aurora i:nth-child(3) { top: 28%; right: -16%; background: radial-gradient(circle, var(--gold-soft) 0%, transparent 66%); opacity: 0.1; animation-duration: 36s; animation-delay: -16s; }
+@keyframes drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(7%, 6%) scale(1.12); }
+  100% { transform: translate(-6%, 9%) scale(0.94); }
+}
+.hero__mark {
+  position: absolute;
+  right: -3%; bottom: -16%;
+  font-family: var(--serif);
+  font-size: clamp(16rem, 36vw, 34rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold-dim);
+  opacity: 0.22;
+  pointer-events: none;
+  user-select: none;
+}
+.hero .container { position: relative; z-index: 1; }
+
+/* Indicateur "Défiler" */
+.hero__scroll { display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 1; }
+.hero__scroll em {
+  font-style: normal;
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  transition: color 0.3s;
+}
+.hero__scroll:hover em { color: var(--gold); }
+
+/* ---------- Bandeau défilant ---------- */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track { display: flex; width: max-content; animation: marquee 45s linear infinite; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__list { display: flex; list-style: none; }
+.marquee__list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 38px;
+  padding-right: 38px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  color: var(--heading);
+  white-space: nowrap;
+}
+.marquee__list li::after {
+  content: "";
+  width: 8px; height: 8px;
+  flex-shrink: 0;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Sections numérotées ---------- */
+.eyebrow__num {
+  display: inline-block;
+  margin-right: 14px;
+  padding-right: 14px;
+  border-right: 1px solid var(--gold-dim);
+  color: var(--muted);
+}
+
+/* ---------- Approche : mini-fenêtres de suivi ---------- */
+.step__mock {
+  margin-bottom: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-2);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  overflow: hidden;
+}
+.section--alt .step__mock { background: var(--bg-3); }
+.mock__bar { display: flex; align-items: center; gap: 5px; padding: 8px 10px; border-bottom: 1px solid var(--line-2); color: var(--muted); }
+.mock__bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+.mock__bar span { margin-left: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mock__lines { list-style: none; display: grid; gap: 7px; padding: 11px 12px 12px; }
+.mock__lines li { display: flex; align-items: center; gap: 9px; color: var(--muted); opacity: 0.4; transition: opacity 0.4s, color 0.4s; }
+.mock__lines li::before {
+  content: "\2713";
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: transparent;
+  font-size: 0.62rem;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+.mock__lines li.is-live::before { content: ""; width: 8px; height: 8px; margin: 0 3px; border-radius: 50%; border: none; background: var(--line); }
+.step.in .mock__lines li { opacity: 1; color: var(--text); }
+.step.in .mock__lines li::before { color: var(--on-gold); background: var(--gold); border-color: var(--gold); }
+.step.in .mock__lines li.is-live { color: #5FB37C; }
+.step.in .mock__lines li.is-live::before { background: #5FB37C; animation: livePulse 1.8s ease-out 1.2s infinite; }
+.step.in .mock__lines li:nth-child(1), .step.in .mock__lines li:nth-child(1)::before { transition-delay: 0.45s; }
+.step.in .mock__lines li:nth-child(2), .step.in .mock__lines li:nth-child(2)::before { transition-delay: 0.75s; }
+.step.in .mock__lines li:nth-child(3), .step.in .mock__lines li:nth-child(3)::before { transition-delay: 1.05s; }
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(95, 179, 124, 0.5); }
+  100% { box-shadow: 0 0 0 7px rgba(95, 179, 124, 0); }
+}
+
+@media (max-width: 680px) {
+  .hero__aurora i { filter: blur(50px); width: 80vw; }
+  .hero__mark { font-size: 15rem; bottom: -6%; opacity: 0.16; }
+  .marquee { padding: 18px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__title .line > span { animation: none; transform: none; }
+  .rotator > span { animation: none; transition: none; }
+  .hero__aurora i, .marquee__track { animation: none; }
+  .mock__lines li, .mock__lines li::before { transition: none; }
+  .step.in .mock__lines li.is-live::before { animation: none; }
+}
+
+@media (max-width: 980px) { .hero__scroll { display: none; } }
