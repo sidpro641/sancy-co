@@ -151,10 +151,10 @@ flowchart LR
   faq_process -->|"Une autre question"| faq
   faq_process -->|"Démarrer mon projet"| end12
   human -->|"Discuter sur WhatsApp"| end6
-  end15(("Appel 0781051893"))
-  human -->|"Appeler le 07 81 05 18 93"| end15
-  end16(("Appel 0558265352"))
-  human -->|"Appeler le 05 58 26 53 52"| end16
+  end15(("Appel +213781051893"))
+  human -->|"Appeler le +213 781 05 18 93"| end15
+  end16(("Appel +213558265352"))
+  human -->|"Appeler le +213 558 26 53 52"| end16
   human -->|"Être rappelé"| end12
   classDef endpoint fill:#D9BE82,stroke:#8A6A2F,color:#0A0A0A;
   class end0,end1,end2,end3,end4,end5,end6,end7,end8,end9,end10,end11,end12,end13,end14,end15,end16 endpoint;
@@ -215,8 +215,8 @@ flowchart LR
           - « En parler à un conseiller » →
             - **human** — Notre équipe vous répond directement. Comment préférez-vous échanger ?
               - « Discuter sur WhatsApp » → WhatsApp (avec le résumé de la conversation)
-              - « Appeler le 07 81 05 18 93 » → appel 0781051893
-              - « Appeler le 05 58 26 53 52 » → appel 0558265352
+              - « Appeler le +213 781 05 18 93 » → appel +213781051893
+              - « Appeler le +213 558 26 53 52 » → appel +213558265352
               - « Être rappelé » → ✉ nom + téléphone, demande envoyée (service : Autre / je ne sais pas encore)
       - « Un outil pour mon équipe » →
         - **app_team** — Suivi des commandes, gestion des stocks, tournées, pointage… Un outil sur-mesure fait gagner un temps précieux à vos équipes. / Décrivez-nous votre besoin, nous revenons vers vous avec une proposition.

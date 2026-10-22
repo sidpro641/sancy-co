@@ -11,7 +11,7 @@
        { label, to: "nœud" }       → continuer vers un autre nœud
        { label, lead: "Service" }  → demander nom + téléphone, puis envoyer la demande
        { label, href: "page" }     → ouvrir une page du site (chemin depuis la racine)
-       { label, tel: "0781051893" }→ appeler
+       { label, tel: "+213781051893" }→ appeler
        { label, wa: true }         → ouvrir WhatsApp avec le résumé de la conversation
      "Retour" et "Menu principal" sont ajoutés automatiquement.
      Après modification : `node outils/arbre-chatbot.js` vérifie l'arbre
@@ -383,8 +383,8 @@
       say: ["Notre équipe vous répond directement. Comment préférez-vous échanger ?"],
       choices: [
         { label: "Discuter sur WhatsApp", wa: true },
-        { label: "Appeler le 07 81 05 18 93", tel: "0781051893" },
-        { label: "Appeler le 05 58 26 53 52", tel: "0558265352" },
+        { label: "Appeler le +213 781 05 18 93", tel: "+213781051893" },
+        { label: "Appeler le +213 558 26 53 52", tel: "+213558265352" },
         { label: "Être rappelé", lead: "Autre / je ne sais pas encore" }
       ]
     }
@@ -481,7 +481,7 @@
   compose.appendChild(sendBtn);
 
   var foot = el("p", "chat-foot");
-  foot.innerHTML = 'Ou appelez-nous : <a href="tel:0781051893">07 81 05 18 93</a>';
+  foot.innerHTML = 'Ou appelez-nous : <a href="tel:+213781051893">+213 781 05 18 93</a>';
 
   panel.appendChild(head);
   panel.appendChild(log);
@@ -691,7 +691,7 @@
         botSays(["L'envoi n'a pas abouti. Écrivez-nous sur WhatsApp ou appelez-nous directement :"]).then(function () {
           showChoices([
             { label: "Discuter sur WhatsApp", wa: true, primary: true },
-            { label: "Appeler le 07 81 05 18 93", tel: "0781051893" },
+            { label: "Appeler le +213 781 05 18 93", tel: "+213781051893" },
             { label: "Réessayer l'envoi", retry: true, nav: true }
           ]);
         });

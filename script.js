@@ -29,11 +29,10 @@
   }
 
   /* Titre : le mot en or change toutes les 2,4 s (sortie par le haut, entrée par le bas).
-     Mouvement réduit demandé par le système : on garde le premier mot, sans rotation. */
-  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+     Mouvement réduit demandé par le système : simple fondu, géré en CSS. */
   document.querySelectorAll("[data-rotator]").forEach(function (rotator) {
     var words = rotator.children;
-    if (words.length < 2 || reduceMotion) return;
+    if (words.length < 2) return;
     var current = 0;
     setInterval(function () {
       if (document.hidden) return;

@@ -34,5 +34,10 @@ Les demandes de devis envoyées depuis l'assistant utilisent la même clé Web3F
 
 ## Ajouter un article de blog
 
-Dupliquez un fichier de `blog/`, changez le titre, la date et le texte, puis ajoutez sa carte
-dans `blog/index.html` (et dans la section Blog de `index.html` pour l'afficher sur l'accueil).
+Dupliquez un fichier de `blog/`, changez le titre, la description, l'adresse `canonical`, la photo,
+la date et le texte, puis ajoutez sa carte dans `blog/index.html` (et dans la section Blog de
+`index.html` pour l'afficher sur l'accueil). Ajoutez enfin son adresse dans `sitemap.xml`
+pour que Google la découvre.
+
+Les photos viennent d'[Unsplash](https://unsplash.com) (licence gratuite, usage commercial autorisé),
+chargées directement depuis leur serveur d'images.
